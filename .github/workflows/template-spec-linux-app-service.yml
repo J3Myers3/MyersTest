@@ -1,23 +1,27 @@
 name: template-spec-linux-app-service
-concurrency: template-spec-linux-app-service
+#concurrency: template-spec-linux-app-service
 
-on:
-  workflow_dispatch:
-  push:
-    branches:
-      - main
-    paths:
-      - 'template-specs/linux-app-service/**'
+on: [workflow_dispatch]
+  #push:
+   # branches:
+    #  - main
+    #paths:
+     # - 'template-specs/linux-app-service/**'
 
-permissions:
-  id-token: write
-  contents: read
+#permissions:
+ # id-token: write
+ # 3contents: read
 
-env:
-  AZURE_RESOURCEGROUP_NAME: ToyReusable
-  AZURE_REGION: westus3
-  TEMPLATE_SPEC_NAME: linux-app-service
-  TEMPLATE_SPEC_FILE_PATH: template-specs/linux-app-service/main.bicep
+#env:
+ # AZURE_RESOURCEGROUP_NAME: ToyReusable
+  #AZURE_REGION: westus3
+  #TEMPLATE_SPEC_NAME: linux-app-service
+  #TEMPLATE_SPEC_FILE_PATH: template-specs/linux-app-service/main.bicep
 
 jobs:
-  # To be added.
+   say-hello:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: 'placeHolder Steps'
+        run: echo 'Hello World'
+
