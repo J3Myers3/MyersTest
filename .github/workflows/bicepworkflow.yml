@@ -1,4 +1,4 @@
-name: template-spec-linux-app-service
+name: bicep-workflow
 #concurrency: template-spec-linux-app-service
 
 on: [workflow_dispatch]
@@ -15,8 +15,6 @@ permissions:
 env:
   AZURE_RESOURCEGROUP_NAME: myersTest2
   AZURE_REGION: eastus
-  TEMPLATE_SPEC_NAME: linux-app-service
-  TEMPLATE_SPEC_FILE_PATH: template-specs/linux-app-service/main.bicep
 
 jobs:
   deploy:
@@ -32,6 +30,6 @@ jobs:
       with:
         deploymentName: ${{ github.run_number}}
         resourceGroupName: ${{ env.AZURE_RESOURCEGROUP_NAME}}
-        template: ./template-specs/linux-app-service/main.bicep
+        template: ./deploy/main2.bicep
 
       
